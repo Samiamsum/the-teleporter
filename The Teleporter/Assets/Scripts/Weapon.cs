@@ -2,21 +2,26 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Weapon : MonoBehaviour
+[CreateAssetMenu(fileName = "New Weapon", menuName = "Weapon")]
+public class Weapon : ScriptableObject
 {
+    public Sprite currentWeaponSprite;
     public GameObject bulletPrefab;
-    public Transform firePoint;
+    //public Transform firePoint;
+    public float fireRate = 1;
+    public int damage = 1;
     public float fireForce = 20f;
-
-    void Update()
+ 
+    public void UpdateWeaponRotation(Transform weaponTransform)
     {
-        Vector2 dir = Camera.main.ScreenToWorldPoint(Input.mousePosition) - transform.position;
+        //Move weapon in direction of mouse
+        Vector2 dir = Camera.main.ScreenToWorldPoint(Input.mousePosition) - weaponTransform.position;
         float angle = Mathf.Atan2(dir.y, dir.x) * Mathf.Rad2Deg;
         Quaternion rotation = Quaternion.AngleAxis(angle - 90, Vector3.forward);
-        transform.rotation = rotation;
+        weaponTransform.rotation = rotation;
     }
 
-    public void Fire()
+    public void Fire(Transform firePoint)
     {
         GameObject bullet = Instantiate(bulletPrefab, firePoint.position, firePoint.rotation);
         bullet.GetComponent<Rigidbody2D>().AddForce(firePoint.up * fireForce, ForceMode2D.Impulse);
