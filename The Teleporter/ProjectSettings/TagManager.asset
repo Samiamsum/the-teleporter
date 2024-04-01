@@ -11,9 +11,9 @@ TagManager:
   - 
   - Water
   - UI
-  - 
-  - 
-  - 
+  - Ground Floor
+  - Wall
+  - Character Level
   - 
   - 
   - 
@@ -38,9 +38,15 @@ TagManager:
   - 
   - 
   m_SortingLayers:
+  - name: Ground Floor
+    uniqueID: 1337952657
+    locked: 0
+  - name: Wall
+    uniqueID: 90361909
+    locked: 0
   - name: Default
     uniqueID: 0
     locked: 0
-  - name: New Layer 1
+  - name: Character Level
     uniqueID: 2348524945
     locked: 0
