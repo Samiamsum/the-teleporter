@@ -7,9 +7,10 @@ public class PlayerContoller : MonoBehaviour
 
     public float moveSpeed = 5f;
     public Rigidbody2D rb;
-    public Weapon weapon;
+    public Weapon currentWeapon; //
     public Transform weaponTransform;
     public Transform firePoint;
+    private float nextTimeOfFire = 0;
     Vector2 moveDirection;
     Vector2 mousePosition;
     void Start()
@@ -20,13 +21,18 @@ public class PlayerContoller : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        weapon.UpdateWeaponRotation(weaponTransform);
+        currentWeapon.UpdateWeaponRotation(weaponTransform);
         float moveX = Input.GetAxisRaw("Horizontal");
         float moveY = Input.GetAxisRaw("Vertical");
 
         if(Input.GetMouseButtonDown(0))
         {
-            weapon.Fire(firePoint);
+            if(Time.time >= nextTimeOfFire) //
+            {
+                currentWeapon.Fire(firePoint);
+                nextTimeOfFire = Time.time + 1 / currentWeapon.fireRate;
+            }
+            
         }
 
         moveDirection = new Vector2(moveX, moveY).normalized;
