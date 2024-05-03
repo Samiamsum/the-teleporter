@@ -10,10 +10,10 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: bfc0749b2aa6ea1448ef2f6c437c047a, type: 3}
-  m_Name: TheBlunder
+  m_Name: TheAlamo
   m_EditorClassIdentifier: 
-  currentWeaponSprite: {fileID: 21300000, guid: f8c7b6963a803904fb5421ba46b94400, type: 3}
-  bulletPrefab: {fileID: 1014154055927355994, guid: 4832a007509eb464ead2d033fcbf7a9a, type: 3}
+  currentWeaponSprite: {fileID: 21300000, guid: 302ddaef3a035624b8111dd649560fa7, type: 3}
+  bulletPrefab: {fileID: 1896623536928418487, guid: e0c45039239eb534ea4a8a2d79bc6968, type: 3}
   fireRate: 1
   damage: 1
   fireForce: 20

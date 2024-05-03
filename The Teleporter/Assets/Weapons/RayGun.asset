@@ -10,10 +10,10 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: bfc0749b2aa6ea1448ef2f6c437c047a, type: 3}
-  m_Name: TheBlunder
+  m_Name: RayGun
   m_EditorClassIdentifier: 
-  currentWeaponSprite: {fileID: 21300000, guid: f8c7b6963a803904fb5421ba46b94400, type: 3}
-  bulletPrefab: {fileID: 1014154055927355994, guid: 4832a007509eb464ead2d033fcbf7a9a, type: 3}
+  currentWeaponSprite: {fileID: 21300000, guid: f70e792fbbf2bb24d9c4a3d4177a2fa8, type: 3}
+  bulletPrefab: {fileID: 5991613164218690353, guid: 99c84d6a0ee1d6d4a8d339b289c55bec, type: 3}
   fireRate: 1
   damage: 1
   fireForce: 20
