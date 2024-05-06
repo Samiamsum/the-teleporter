@@ -9,7 +9,7 @@ public class Weapon : ScriptableObject
     public GameObject bulletPrefab;
     //public Transform firePoint;
     public float fireRate = 1;
-    public int damage = 1;
+    public float damage = 1f;
     public float fireForce = 20f;
  
     public void UpdateWeaponRotation(Transform weaponTransform)
