@@ -7,6 +7,7 @@ public class PlayerContoller : MonoBehaviour
 
     public float moveSpeed = 5f;
     public Rigidbody2D rb;
+    //public SpriteRenderer weaponSpriteRenderer; // Reference to the weapon's SpriteRenderer
     public Weapon currentWeapon; //
     public Transform weaponTransform;
     public Transform firePoint;
@@ -21,6 +22,10 @@ public class PlayerContoller : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        //CHANGEWEAPON METHOD
+        //if collide with weapon
+        // call ChangeWeapon method
+
         currentWeapon.UpdateWeaponRotation(weaponTransform);
         float moveX = Input.GetAxisRaw("Horizontal");
         float moveY = Input.GetAxisRaw("Vertical");
@@ -49,6 +54,14 @@ public class PlayerContoller : MonoBehaviour
         //float aimAngle = Mathf.Atan2(aimDirection.y, aimDirection.x) * Mathf.Rad2Deg - 90f;
         //rb.rotation = aimAngle;
 
-    }
+    }   
+
+    //weapon pick up method
+    //void ChangeWeapon(Weapon newWeapon)
+    //{
+    //    currentWeapon = newWeapon;
+        // Update the weapon's sprite renderer to reflect the new weapon
+    //    weaponSpriteRenderer.sprite = currentWeapon.currentWeaponSprite;
+    //}
 
 }
