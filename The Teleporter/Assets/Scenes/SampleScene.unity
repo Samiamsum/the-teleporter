@@ -3308,6 +3308,7 @@ GameObject:
   - component: {fileID: 879213791}
   - component: {fileID: 879213790}
   - component: {fileID: 879213794}
+  - component: {fileID: 879213795}
   m_Layer: 8
   m_Name: Player
   m_TagString: Player
@@ -3472,6 +3473,20 @@ MonoBehaviour:
   currentWeapon: {fileID: 11400000, guid: 29e5041328481e94db7c96d44965446a, type: 2}
   weaponTransform: {fileID: 679885204}
   firePoint: {fileID: 1217397219}
+--- !u!114 &879213795
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 879213788}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0f62eb4f94ae0cc4eb775f3277269d44, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  speed: 2.5
+  platformingCreature: 0
 --- !u!1 &927464033
 GameObject:
   m_ObjectHideFlags: 0
@@ -4491,6 +4506,8 @@ GameObject:
   - component: {fileID: 1151235991}
   - component: {fileID: 1151235993}
   - component: {fileID: 1151235994}
+  - component: {fileID: 1151235995}
+  - component: {fileID: 1151235996}
   m_Layer: 0
   m_Name: peanutBoom
   m_TagString: Untagged
@@ -4577,6 +4594,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 084b1e7e35f59d84e9476576ecc9a02f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  myCreature: {fileID: 1151235994}
+  targetCreature: {fileID: 879213795}
+  obstacles:
+    serializedVersion: 2
+    m_Bits: 0
+  sightDistance: 5
+  gridSize: 1
 --- !u!114 &1151235994
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -4589,6 +4613,56 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0f62eb4f94ae0cc4eb775f3277269d44, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  speed: 2.5
+  platformingCreature: 0
+--- !u!50 &1151235995
+Rigidbody2D:
+  serializedVersion: 4
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1151235990}
+  m_BodyType: 0
+  m_Simulated: 1
+  m_UseFullKinematicContacts: 0
+  m_UseAutoMass: 0
+  m_Mass: 1
+  m_LinearDrag: 0
+  m_AngularDrag: 0.05
+  m_GravityScale: 0
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_Interpolate: 0
+  m_SleepingMode: 1
+  m_CollisionDetection: 0
+  m_Constraints: 0
+--- !u!95 &1151235996
+Animator:
+  serializedVersion: 5
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1151235990}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 0}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorStateOnDisable: 0
+  m_WriteDefaultValuesOnDisable: 0
 --- !u!1 &1217397218
 GameObject:
   m_ObjectHideFlags: 0
