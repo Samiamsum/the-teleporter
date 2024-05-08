@@ -58,7 +58,7 @@ public class TurnipSlug : MonoBehaviour
 
     IEnumerator Shoot(){
         if(isInRange){
-        Instantiate(bullet, bulletPos.position, Quaternion.identity);
+        Instantiate(bullet, bulletPos.position, transform.rotation);
         }
         
         yield return new WaitForSeconds(.3f);
