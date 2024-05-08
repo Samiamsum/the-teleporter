@@ -134,6 +134,7 @@ GameObject:
   - component: {fileID: 41347032}
   - component: {fileID: 41347031}
   - component: {fileID: 41347033}
+  - component: {fileID: 41347034}
   m_Layer: 0
   m_Name: theTeleporter
   m_TagString: Untagged
@@ -225,6 +226,33 @@ MonoBehaviour:
   minY: -5
   maxY: 5
   teleportInterval: 5
+--- !u!50 &41347034
+Rigidbody2D:
+  serializedVersion: 4
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 41347030}
+  m_BodyType: 0
+  m_Simulated: 1
+  m_UseFullKinematicContacts: 0
+  m_UseAutoMass: 0
+  m_Mass: 1
+  m_LinearDrag: 0
+  m_AngularDrag: 0.05
+  m_GravityScale: 0
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_Interpolate: 0
+  m_SleepingMode: 1
+  m_CollisionDetection: 0
+  m_Constraints: 0
 --- !u!1 &124253628
 GameObject:
   m_ObjectHideFlags: 0
@@ -1756,7 +1784,8 @@ Transform:
   m_LocalPosition: {x: -0.47, y: 2.63, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
-  m_Children: []
+  m_Children:
+  - {fileID: 828775672}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &367018179
@@ -1771,6 +1800,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4e91609743207b046a65d4d2d3be8f48, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  speed: 0.3
+  bulletPos: {fileID: 828775672}
+  bullet: {fileID: 744179802}
 --- !u!50 &367018180
 Rigidbody2D:
   serializedVersion: 4
@@ -3070,7 +3102,7 @@ Camera:
   far clip plane: 1000
   field of view: 60
   orthographic: 1
-  orthographic size: 5.990946
+  orthographic size: 5.327875
   m_Depth: -1
   m_CullingMask:
     serializedVersion: 2
@@ -3181,10 +3213,11 @@ Transform:
   m_GameObject: {fileID: 704369308}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0.65, y: 2.66, z: 0}
+  m_LocalPosition: {x: 1.03, y: 2.15, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
-  m_Children: []
+  m_Children:
+  - {fileID: 1960009314}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &704369311
@@ -3200,6 +3233,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   speed: 0.3
+  bulletPos: {fileID: 1960009314}
+  bullet: {fileID: 916593147}
 --- !u!50 &704369312
 Rigidbody2D:
   serializedVersion: 4
@@ -3227,6 +3262,11 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 0
   m_Constraints: 0
+--- !u!1 &744179802 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 5926928160619584726, guid: d2d4ad9a75b45bf4589534d1329c9855, type: 3}
+  m_PrefabInstance: {fileID: 6862266042138895615}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &790791073
 GameObject:
   m_ObjectHideFlags: 0
@@ -3311,6 +3351,37 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &828775671
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 828775672}
+  m_Layer: 0
+  m_Name: bulletPos
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &828775672
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 828775671}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 367018178}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &879213795 stripped
 MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 8405899787525700487, guid: 2f662a64335b71a4fb701fb2549daade, type: 3}
@@ -3322,6 +3393,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0f62eb4f94ae0cc4eb775f3277269d44, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!1 &916593147 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 7742247515902899156, guid: 50c457962c99e2a4ea0f8d5c7ccfd211, type: 3}
+  m_PrefabInstance: {fileID: 1027736741342299698}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &927464033
 GameObject:
   m_ObjectHideFlags: 0
@@ -4390,6 +4466,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3869ad3c4ed59a2458df313c378f197f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  speed: 0.3
 --- !u!50 &1756613047
 Rigidbody2D:
   serializedVersion: 4
@@ -4417,6 +4494,37 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 0
   m_Constraints: 0
+--- !u!1 &1960009313
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1960009314}
+  m_Layer: 0
+  m_Name: bulletPos
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1960009314
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1960009313}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: -0, y: -0.44, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 704369310}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &74021047080918755
 PrefabInstance:
   m_ObjectHideFlags: 0

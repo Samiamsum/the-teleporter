@@ -2,6 +2,8 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
+    //The teleporter shoots towards player and teleports around
+
 public class TheTeleporter : MonoBehaviour
 {
 
@@ -11,7 +13,10 @@ public class TheTeleporter : MonoBehaviour
     public float maxY = 5f; // Maximum Y position
     public float teleportInterval = 5f; // Time interval between teleportations
     protected float timer = 0;
-
+    private Transform playerPos;
+    private Rigidbody2D rb;
+    private SpriteRenderer spriteRenderer;
+   
     // Start is called before the first frame update
     void Start()
     {
@@ -29,6 +34,7 @@ public class TheTeleporter : MonoBehaviour
             Teleport();
         }
         
+        
     }
 
     public void Teleport(){
@@ -38,6 +44,10 @@ public class TheTeleporter : MonoBehaviour
 
         // Set the position of the enemy to the randomly generated position
         transform.position = new Vector2(randomX, randomY);
+       
     }
+
+
+
 
 }
