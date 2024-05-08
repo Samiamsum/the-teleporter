@@ -3309,6 +3309,8 @@ GameObject:
   - component: {fileID: 879213790}
   - component: {fileID: 879213794}
   - component: {fileID: 879213795}
+  - component: {fileID: 879213797}
+  - component: {fileID: 879213796}
   m_Layer: 8
   m_Name: Player
   m_TagString: Player
@@ -3470,6 +3472,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   moveSpeed: 5
   rb: {fileID: 879213790}
+  asc: {fileID: 879213797}
   currentWeapon: {fileID: 11400000, guid: 29e5041328481e94db7c96d44965446a, type: 2}
   weaponTransform: {fileID: 679885204}
   firePoint: {fileID: 1217397219}
@@ -3486,7 +3489,43 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   speed: 2.5
+  asc: {fileID: 879213797}
   platformingCreature: 0
+--- !u!95 &879213796
+Animator:
+  serializedVersion: 5
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 879213788}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 2152ba329249aa6498e77561f4ca835d, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorStateOnDisable: 0
+  m_WriteDefaultValuesOnDisable: 0
+--- !u!114 &879213797
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 879213788}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 974aaaeea4b62214b8c792bd9099d5d4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  animator: {fileID: 879213796}
+  currentState: Idle
 --- !u!1 &927464033
 GameObject:
   m_ObjectHideFlags: 0
@@ -4508,6 +4547,7 @@ GameObject:
   - component: {fileID: 1151235994}
   - component: {fileID: 1151235995}
   - component: {fileID: 1151235996}
+  - component: {fileID: 1151235997}
   m_Layer: 0
   m_Name: peanutBoom
   m_TagString: Untagged
@@ -4614,6 +4654,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   speed: 2.5
+  asc: {fileID: 1151235997}
   platformingCreature: 0
 --- !u!50 &1151235995
 Rigidbody2D:
@@ -4652,7 +4693,7 @@ Animator:
   m_GameObject: {fileID: 1151235990}
   m_Enabled: 1
   m_Avatar: {fileID: 0}
-  m_Controller: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: a00f6b8854e5f0545b675b624f296b94, type: 2}
   m_CullingMode: 0
   m_UpdateMode: 0
   m_ApplyRootMotion: 0
@@ -4663,6 +4704,20 @@ Animator:
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorStateOnDisable: 0
   m_WriteDefaultValuesOnDisable: 0
+--- !u!114 &1151235997
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1151235990}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 974aaaeea4b62214b8c792bd9099d5d4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  animator: {fileID: 1151235996}
+  currentState: Idle
 --- !u!1 &1217397218
 GameObject:
   m_ObjectHideFlags: 0

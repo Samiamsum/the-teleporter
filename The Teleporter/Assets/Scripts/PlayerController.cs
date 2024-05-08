@@ -7,6 +7,7 @@ public class PlayerController : MonoBehaviour
 
     public float moveSpeed = 5f;
     public Rigidbody2D rb;
+    [SerializeField] private AnimationStateChanger asc;
     //public SpriteRenderer weaponSpriteRenderer; // Reference to the weapon's SpriteRenderer
     public Weapon currentWeapon; //
     public Transform weaponTransform;
@@ -41,6 +42,15 @@ public class PlayerController : MonoBehaviour
         }
 
         moveDirection = new Vector2(moveX, moveY).normalized;
+
+        //setting animation
+        if(moveDirection != Vector2.zero){
+            asc.changeAnimationState("Walk");
+        }
+        else{
+            asc.changeAnimationState("Idle");
+        }
+
         //mousePosition = Camera.main.ScreenToWorldPoint(Input.mousePosition);
 
 

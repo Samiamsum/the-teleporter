@@ -10,7 +10,7 @@ public class CreatureAIHugState : CreatureAIState
 
     public override void BeginState()
     {
-        creatureAI.SetColor(Color.red);
+        //creatureAI.SetColor(Color.red);
     }
 
     public override void UpdateState()

@@ -8,7 +8,8 @@ public class Creature : MonoBehaviour
     Rigidbody2D rb;
     SpriteRenderer spriteRenderer;
     public float speed = 2.5f;
-    //public AnimationStateCHanger asc;
+    //public AnimationStateChanger asc;
+    [SerializeField] private AnimationStateChanger asc;
     public bool platformingCreature = false;
 
     // Start is called before the first frame update
@@ -31,7 +32,7 @@ public class Creature : MonoBehaviour
                 rb.velocity = vel;
             }
 
-            //asc.changeAnimationState("Walking");
+            asc.changeAnimationState("Walk");
             if(offset.x<0){
                 spriteRenderer.flipX = true;
                 
@@ -45,13 +46,13 @@ public class Creature : MonoBehaviour
 
     public void Stop(){
         //return;
-        if(platformingCreature){
-            rb.velocity = new Vector2(0,rb.velocity.y);
+        //if(platformingCreature){
+        //    rb.velocity = new Vector2(0,rb.velocity.y);
 
-        }else{
+        //}else{
             rb.velocity = Vector3.zero;
-        }
-        //asc.ChangingAnimationState("Idle");
+        //}
+        asc.changeAnimationState("Idle");
     }
 
     public void MoveToward(Vector3 position){
