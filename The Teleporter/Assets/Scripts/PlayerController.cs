@@ -8,6 +8,7 @@ public class PlayerController : MonoBehaviour
     public float moveSpeed = 5f;
     public Rigidbody2D rb;
     [SerializeField] private AnimationStateChanger asc;
+    SpriteRenderer spriteRenderer;
     //public SpriteRenderer weaponSpriteRenderer; // Reference to the weapon's SpriteRenderer
     public Weapon currentWeapon; //
     public Transform weaponTransform;
@@ -17,7 +18,7 @@ public class PlayerController : MonoBehaviour
     Vector2 mousePosition;
     void Start()
     {
- 
+        spriteRenderer = GetComponent<SpriteRenderer>();
     }
 
     // Update is called once per frame
@@ -42,6 +43,14 @@ public class PlayerController : MonoBehaviour
         }
 
         moveDirection = new Vector2(moveX, moveY).normalized;
+
+        if(moveX<0){
+                spriteRenderer.flipX = true;
+                
+            }
+            else if(moveX>0){
+                spriteRenderer.flipX = false;
+            }
 
         //setting animation
         if(moveDirection != Vector2.zero){
