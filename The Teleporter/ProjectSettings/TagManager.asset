@@ -5,6 +5,7 @@ TagManager:
   serializedVersion: 2
   tags:
   - Weapon
+  - Wall
   layers:
   - Default
   - TransparentFX
@@ -42,12 +43,12 @@ TagManager:
   - name: Ground Floor
     uniqueID: 1337952657
     locked: 0
-  - name: Wall
-    uniqueID: 90361909
-    locked: 0
   - name: Default
     uniqueID: 0
     locked: 0
   - name: Character Level
     uniqueID: 2348524945
+    locked: 0
+  - name: Wall
+    uniqueID: 90361909
     locked: 0
