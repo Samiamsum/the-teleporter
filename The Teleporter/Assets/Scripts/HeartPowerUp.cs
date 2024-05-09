@@ -5,6 +5,7 @@ using UnityEngine;
 public class HeartPowerUp : MonoBehaviour
 {
     public PlayerHealth playerHealth;
+    public float delayBeforeDestroy = .09f;
 
     // Start is called before the first frame update
     void Start()
@@ -23,9 +24,11 @@ public class HeartPowerUp : MonoBehaviour
          {
     //        // Destroy(other.gameObject);
     //        // hurt player
+            GetComponent<AudioSource>().Play();
              playerHealth.AddHealth(1);
     //         //destroy the bullet itself
-              Destroy(gameObject);
+              //Destroy(gameObject);
+               Destroy(gameObject, delayBeforeDestroy);
          }
     }
 }
