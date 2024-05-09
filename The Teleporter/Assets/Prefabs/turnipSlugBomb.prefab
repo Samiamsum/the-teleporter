@@ -14,7 +14,7 @@ GameObject:
   - component: {fileID: 1965237784922458613}
   - component: {fileID: 572193367321222631}
   m_Layer: 0
-  m_Name: turnipSlugBomb 1
+  m_Name: turnipSlugBomb
   m_TagString: EnemyBullet
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0

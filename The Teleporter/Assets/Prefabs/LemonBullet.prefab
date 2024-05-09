@@ -14,7 +14,7 @@ GameObject:
   - component: {fileID: 3412945381976266263}
   - component: {fileID: 7649907527920450776}
   m_Layer: 0
-  m_Name: LemonBullet 1
+  m_Name: LemonBullet
   m_TagString: EnemyBullet
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0

@@ -8,7 +8,7 @@ public class EnemyBullet : MonoBehaviour
     public GameObject player;
     public float speed;
     private Rigidbody2D rb;
-
+    public PlayerHealth playerHealth;
 
 
     void Start()
@@ -21,4 +21,22 @@ public class EnemyBullet : MonoBehaviour
         transform.rotation = Quaternion.Euler(0,0,rotation);
     }
 
-}
+    void OnTriggerEnter2D(Collider2D other){
+         if(other.CompareTag("Player"))
+         {
+    //        // Destroy(other.gameObject);
+    //        // hurt player
+             playerHealth.TakeDamage(1);
+    //         //destroy the bullet itself
+    //        // Destroy(gameObject);
+         }
+    //     else if(other.CompareTag("Wall")){
+    //          //destroy the bullet itself
+    //          Destroy(gameObject);
+    //     }
+    }
+
+
+
+    }
+
