@@ -6,6 +6,7 @@ TagManager:
   tags:
   - Weapon
   - Wall
+  - Enemy
   layers:
   - Default
   - TransparentFX
@@ -46,9 +47,12 @@ TagManager:
   - name: Default
     uniqueID: 0
     locked: 0
+  - name: North Wall
+    uniqueID: 571627075
+    locked: 0
   - name: Character Level
     uniqueID: 2348524945
     locked: 0
-  - name: Wall
+  - name: South Wall
     uniqueID: 90361909
     locked: 0

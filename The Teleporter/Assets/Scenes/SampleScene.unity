@@ -1759,7 +1759,7 @@ SpriteRenderer:
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: -1946442351
-  m_SortingLayer: 1
+  m_SortingLayer: 2
   m_SortingOrder: 0
   m_Sprite: {fileID: 21300000, guid: 969786d34559f234cb04e44cb5518abf, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
@@ -1902,8 +1902,8 @@ TilemapRenderer:
   m_AutoUVMaxDistance: 0.5
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
-  m_SortingLayerID: -1946442351
-  m_SortingLayer: 1
+  m_SortingLayerID: 90361909
+  m_SortingLayer: 3
   m_SortingOrder: 0
   m_ChunkSize: {x: 32, y: 32, z: 32}
   m_ChunkCullingBounds: {x: 0, y: 0, z: 0}
@@ -3518,8 +3518,8 @@ TilemapRenderer:
   m_AutoUVMaxDistance: 0.5
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
-  m_SortingLayerID: 0
-  m_SortingLayer: 0
+  m_SortingLayerID: 571627075
+  m_SortingLayer: 1
   m_SortingOrder: 0
   m_ChunkSize: {x: 32, y: 32, z: 32}
   m_ChunkCullingBounds: {x: 0, y: 0, z: 0}
@@ -4406,6 +4406,10 @@ PrefabInstance:
       value: -1946442351
       objectReference: {fileID: 0}
     - target: {fileID: 3689894339216377104, guid: bffa2f01cfc68494dad8a190d0256f23, type: 3}
+      propertyPath: sightDistance
+      value: 4
+      objectReference: {fileID: 0}
+    - target: {fileID: 3689894339216377104, guid: bffa2f01cfc68494dad8a190d0256f23, type: 3}
       propertyPath: targetCreature
       value: 
       objectReference: {fileID: 879213795}
@@ -4416,6 +4420,10 @@ PrefabInstance:
     - target: {fileID: 7249666247018261398, guid: bffa2f01cfc68494dad8a190d0256f23, type: 3}
       propertyPath: m_Name
       value: peanutBoom (1)
+      objectReference: {fileID: 0}
+    - target: {fileID: 7249666247018261398, guid: bffa2f01cfc68494dad8a190d0256f23, type: 3}
+      propertyPath: m_TagString
+      value: Enemy
       objectReference: {fileID: 0}
     - target: {fileID: 7715233355866038846, guid: bffa2f01cfc68494dad8a190d0256f23, type: 3}
       propertyPath: m_LocalPosition.x
