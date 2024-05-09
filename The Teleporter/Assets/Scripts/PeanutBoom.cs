@@ -4,6 +4,13 @@
 
 // public class PeanutBoom : MonoBehaviour
 // {
+
+
+        //when colliding with player drop bomb
+        //destroy this PeanutBomb object
+        //---bomb script -exploasion animation+damage to player and enemy
+
+
 //     // Start is called before the first frame update
 //     void Start()
 //     {
