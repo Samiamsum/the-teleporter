@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class PlayerHealth : MonoBehaviour
 {
@@ -16,12 +17,11 @@ public class PlayerHealth : MonoBehaviour
 
     
     public void TakeDamage(int amount){
-        GetComponent<AudioSource>().Play();
+        //GetComponent<AudioSource>().Play();
         health -= amount;
-        if(health<= 0){
-            //Destroy(gameObject);
-            //character dies
-            //menu appears to play again or quit
+        if (health <= 0)
+        {
+            Die();
         }
     }
 
@@ -29,9 +29,18 @@ public class PlayerHealth : MonoBehaviour
         
         if(health < 4){
             health += amount;
-            //Destroy(gameObject);
+           
             
         }
+    }
+
+    void Die()
+    {
+        // Load the death menu scene
+        SceneManager.LoadScene("DeathMenu");
+
+        // Destroy the player object
+        Destroy(gameObject);
     }
 
 }
