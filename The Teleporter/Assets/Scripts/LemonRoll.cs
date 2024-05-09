@@ -56,7 +56,7 @@ public class LemonRoll : MonoBehaviour
         Instantiate(bullet, bulletPos.position, transform.rotation);
     
         
-        yield return new WaitForSeconds(.3f);
+        yield return new WaitForSeconds(.7f);
         StartCoroutine(Shoot());
     }
 
