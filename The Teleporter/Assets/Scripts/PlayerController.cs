@@ -9,13 +9,15 @@ public class PlayerController : MonoBehaviour
     public Rigidbody2D rb;
     [SerializeField] private AnimationStateChanger asc;
     SpriteRenderer spriteRenderer;
-    //public SpriteRenderer weaponSpriteRenderer; // Reference to the weapon's SpriteRenderer
     public Weapon currentWeapon; //
     public Transform weaponTransform;
     public Transform firePoint;
     private float nextTimeOfFire = 0;
     Vector2 moveDirection;
     Vector2 mousePosition;
+    private bool hit = true;
+    [SerializeField] private int health = 4;
+
     void Start()
     {
         spriteRenderer = GetComponent<SpriteRenderer>();
@@ -24,9 +26,7 @@ public class PlayerController : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        //CHANGEWEAPON METHOD
-        //if collide with weapon
-        // call ChangeWeapon method
+
 
         currentWeapon.UpdateWeaponRotation(weaponTransform);
         float moveX = Input.GetAxisRaw("Horizontal");
@@ -60,8 +60,6 @@ public class PlayerController : MonoBehaviour
             asc.changeAnimationState("Idle");
         }
 
-        //mousePosition = Camera.main.ScreenToWorldPoint(Input.mousePosition);
-
 
     }
 
@@ -69,19 +67,25 @@ public class PlayerController : MonoBehaviour
     {
         rb.velocity = new Vector2(moveDirection.x * moveSpeed, moveDirection.y * moveSpeed);
 
-        //Vector2 aimDirection = mousePosition - rb.position;
-        //float aimAngle = Mathf.Atan2(aimDirection.y, aimDirection.x) * Mathf.Rad2Deg - 90f;
-        //rb.rotation = aimAngle;
-
     }   
 
-    //weapon pick up method
-    //void ChangeWeapon(Weapon newWeapon)
-    //{
-    //    currentWeapon = newWeapon;
-        // Update the weapon's sprite renderer to reflect the new weapon
-    //    weaponSpriteRenderer.sprite = currentWeapon.currentWeaponSprite;
-    //}
+
+    IEnumerator HitBoxOff(){
+        hit = false;
+        yield return new WaitForSeconds(1.5f);
+        hit = true;
+    }
+    void OnTriggerEnter2D(Collider2D target){
+        Debug.Log("Collision detected with: " + target.gameObject.name); // Check if the collision is being detected
+        if(target.tag == "Enemy"){
+        Debug.Log("Enemy collision detected"); // Check if the tag comparison is working
+        if(hit == true){
+            StartCoroutine(HitBoxOff());
+            health--;
+            Debug.Log("Player health reduced to: " + health); // Check if health is being reduced
+        }
+    }
+    }
 
 }
 
