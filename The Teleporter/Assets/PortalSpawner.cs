@@ -39,6 +39,7 @@ public class PortalSpawner : MonoBehaviour
 
             // Instantiate the object at the calculated position
             Instantiate(portal, spawnPosition, Quaternion.identity);
+            Destroy(gameObject);
         
     }
 }
