@@ -15,8 +15,8 @@ public class PlayerController : MonoBehaviour
     private float nextTimeOfFire = 0;
     Vector2 moveDirection;
     Vector2 mousePosition;
-    private bool hit = true;
-    [SerializeField] private int health;
+    //private bool hit = true;
+   // [SerializeField] private int health;
 
     void Start()
     {
@@ -70,22 +70,22 @@ public class PlayerController : MonoBehaviour
     }   
 
 
-    IEnumerator HitBoxOff(){
-        hit = false;
-        yield return new WaitForSeconds(1.5f);
-        hit = true;
-    }
-    void OnTriggerEnter2D(Collider2D target){
-        Debug.Log("Collision detected with: " + target.gameObject.name); // Check if the collision is being detected
-        if(target.tag == "Enemy"){
-        Debug.Log("Enemy collision detected"); // Check if the tag comparison is working
-        if(hit == true){
-            StartCoroutine(HitBoxOff());
-            health--;
-            Debug.Log("Player health reduced to: " + health); // Check if health is being reduced
-        }
-    }
-    }
+    // IEnumerator HitBoxOff(){
+    //     hit = false;
+    //     yield return new WaitForSeconds(1.5f);
+    //     hit = true;
+    // }
+    // void OnTriggerEnter2D(Collider2D target){
+    //     Debug.Log("Collision detected with: " + target.gameObject.name); // Check if the collision is being detected
+    //     if(target.tag == "Enemy"){
+    //     Debug.Log("Enemy collision detected"); // Check if the tag comparison is working
+    //     if(hit == true){
+    //         StartCoroutine(HitBoxOff());
+    //         health--;
+    //         Debug.Log("Player health reduced to: " + health); // Check if health is being reduced
+    //     }
+    // }
+    // }
 
 }
 

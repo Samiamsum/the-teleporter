@@ -5,10 +5,33 @@ using UnityEngine;
 public class Bullet : MonoBehaviour
 {
 
-    private void OnCollisionEnter2D(Collision2D collision)
+    private Rigidbody2D rb;
+
+    void Start()
     {
-        Destroy(gameObject);
-        
+
+        rb = GetComponent<Rigidbody2D>();
     }
 
+    // Called when the bullet collides with another collider
+    void OnTriggerEnter2D(Collider2D other)
+    {
+        if (other.CompareTag("Enemy"))
+        {
+            Destroy(other.gameObject);
+            //destroy the bullet itself
+            Destroy(gameObject);
+        }
+        else if(other.CompareTag("Environment")){
+            Destroy(other.gameObject);
+            //destroy the bullet itself
+            Destroy(gameObject);
+        }
+        else if(other.CompareTag("Wall")){
+            // Do not destroy wall
+            // Destroy the bullet itself
+            Destroy(gameObject);
+        }
+    }
 }
+
