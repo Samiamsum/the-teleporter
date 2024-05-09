@@ -20,4 +20,12 @@ public class Portal : MonoBehaviour
     {
         
     }
+
+    void OnTriggerEnter2D(Collider2D other){
+         if(other.CompareTag("Player"))
+         {
+             //switch to next level/scene
+             //SceneManager.LoadScene("Level2");
+         }
+    }
 }
