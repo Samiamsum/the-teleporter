@@ -16,6 +16,7 @@ public class PlayerHealth : MonoBehaviour
 
     
     public void TakeDamage(int amount){
+        GetComponent<AudioSource>().Play();
         health -= amount;
         if(health<= 0){
             //Destroy(gameObject);
