@@ -17,7 +17,7 @@ TagManager:
   - Ground Floor
   - Wall
   - Character Level
-  - 
+  - Enemy Level
   - 
   - 
   - 
@@ -52,6 +52,9 @@ TagManager:
     locked: 0
   - name: Character Level
     uniqueID: 2348524945
+    locked: 0
+  - name: Enemy Level
+    uniqueID: 1828168977
     locked: 0
   - name: South Wall
     uniqueID: 90361909
