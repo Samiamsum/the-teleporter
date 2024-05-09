@@ -16,11 +16,17 @@ public class TheTeleporter : MonoBehaviour
     private Transform playerPos;
     private Rigidbody2D rb;
     private SpriteRenderer spriteRenderer;
+    public Transform bulletPos;
+    public GameObject bullet;
    
     // Start is called before the first frame update
     void Start()
     {
-         
+        StartCoroutine(Shoot());
+
+        rb = GetComponent<Rigidbody2D>();
+        playerPos = GameObject.FindGameObjectWithTag("Player").transform;
+        spriteRenderer = GetComponent<SpriteRenderer>();
 
     }
 
@@ -45,6 +51,18 @@ public class TheTeleporter : MonoBehaviour
         // Set the position of the enemy to the randomly generated position
         transform.position = new Vector2(randomX, randomY);
        
+    }
+
+    IEnumerator Shoot(){
+    
+        Instantiate(bullet, bulletPos.position, transform.rotation);
+        yield return new WaitForSeconds(.1f);
+        Instantiate(bullet, bulletPos.position, transform.rotation);
+        yield return new WaitForSeconds(.1f);
+        Instantiate(bullet, bulletPos.position, transform.rotation);
+
+        yield return new WaitForSeconds(4.5f);
+        StartCoroutine(Shoot());
     }
 
 
