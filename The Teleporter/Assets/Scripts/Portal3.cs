@@ -3,11 +3,11 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
-public class Portal : MonoBehaviour
+public class Portal3 : MonoBehaviour
 {
 
-    //Portal1 for level1
-    // teleports player to level2
+    //Portal3 for level3
+    // teleports player to level4
 
     //WHEN ALL ENEMIES IN LEVEL DIE (WITH ENEMY TAG)
     //SPWAN THE PORTAL
@@ -29,7 +29,7 @@ public class Portal : MonoBehaviour
          if(other.CompareTag("Player"))
          {
              //switch to next level/scene
-             SceneManager.LoadScene("Level2");
+             SceneManager.LoadScene("Level4");
          }
     }
 }
