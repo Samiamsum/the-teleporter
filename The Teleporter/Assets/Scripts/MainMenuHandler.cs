@@ -18,7 +18,12 @@ public class MainMenuHandler : MonoBehaviour
     }
 
     public void Play(){
+        //Level1
         SceneManager.LoadScene("SampleScene");
+    }
+
+        public void PlayAgain(){
+        SceneManager.LoadScene("Level1");
     }
 
     public void Quit(){
