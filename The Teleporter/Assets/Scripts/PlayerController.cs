@@ -16,7 +16,7 @@ public class PlayerController : MonoBehaviour
     Vector2 moveDirection;
     Vector2 mousePosition;
     private bool hit = true;
-    [SerializeField] private int health = 4;
+    [SerializeField] private int health;
 
     void Start()
     {
